@@ -1,0 +1,85 @@
+# Using the base ROS2 Jazzy Image
+FROM ros:jazzy-ros-base AS base
+
+# Setting environment variables
+ENV DEBIAN_FRONTEND=noninteractive
+ENV COLCON_WS=/root/turtlebot3_ws
+ENV ROS_SOURCE=/opt/ros/${ROS_DISTRO}/setup.bash
+
+ENV TZ=America/New_York
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Installing the required packages
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    apt-utils \
+    build-essential \
+    cmake \
+    ninja-build \
+    pkg-config \
+    autoconf \
+    libtool \
+    gfortran \
+    git \
+    unzip \
+    wget \
+    python3-pip \
+    python3-argcomplete \
+    python3-yaml \
+    python3-ply \
+    python3-jinja2 \
+    pybind11-dev \
+    libboost-all-dev \
+    libtbb-dev \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
+    libvtk9-dev \
+    libgtk-3-dev \
+    libatlas-base-dev \
+    libparmetis-dev \
+    opencl-header \
+    ocl-icd-opencl-dev \
+    qtbase5-dev \
+    udev \
+    libudev-dev \
+    libgnutls28-dev \
+    openssl \
+    libglib2.0-dev \
+    libgstreamer-plugins-base1.0-dev \
+    net-tools \
+    iproute2 \
+    iputils-ping \
+    nano \
+    xterm \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN echo "source ${ROS_SOURCE}}" >> ~/root/.bashrc
+
+WORKDIR ${COLCON_WS}
+
+RUN mkdir -p ${COLCON_WS}/src && \
+    cd ${COLCON_WS}
+
+# Second stage: Collecting package.xml files for collective rosdep install
+FROM base AS manifests
+COPY src /tmp/src
+RUN mkdir /tmp/manifests && cd /tmp/src \
+    && find . -name package.xml -exec cp --parents {} /tmp/manifests \;
+
+# Final stage
+FROM base
+COPY --from=manifests /tmp/manifests /tmp/rosdep_src
+RUN apt-get update \
+    && rosdep install --from-paths /tmp/rosdep_src --ignore-src -y && \
+    rm -rf /var/lib/apt/lists/* /tmp/rosdep_src
+
+RUN bash -c "source ${ROS_SOURCE} && \
+             colocn build --symlink-install --parallel-workers 2"
+
+RUN echo "export ROS_DOMAIN_ID=30 # TURTLEBOT3" >> ~/.bashrc && \
+    echo "export LD_LIBRARY_PATH=/usr/local/lib/aarch64-linux-gnu:$LD_LIBRARY_PATH" >> ~/.bashrc  && \
+    echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc && \
+    echo "export LDS_MODEL=LDS-01" >> ~/.bashrc
+
+CMD ["bash"]
