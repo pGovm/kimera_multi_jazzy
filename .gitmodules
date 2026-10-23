@@ -44,3 +44,6 @@
 [submodule "src/Kimera-Multi-LCD"]
 	path = src/Kimera-Multi-LCD
 	url = https://github.com/pGovm/Kimera-Multi-LCD.git
+[submodule "src/dpgo_ros"]
+	path = src/dpgo_ros
+	url = https://github.com/pGovm/dpgo_ros.git
