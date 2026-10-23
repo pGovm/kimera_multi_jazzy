@@ -35,9 +35,9 @@
 	path = src/mesh_rviz_plugins
 	url = https://github.com/MIT-SPARK/mesh_rviz_plugins.git
 	branch = ros/base
-[submodule "src/Kimera_VIO_ROS"]
-	path = src/Kimera_VIO_ROS
-	url = https://github.com/pGovm/Kimera-VIO-ROS.git
 [submodule "src/Kimera-VIO-ROS"]
 	path = src/Kimera-VIO-ROS
 	url = https://github.com/pGovm/Kimera-VIO-ROS.git
+[submodule "src/Kimera-Distributed"]
+	path = src/Kimera-Distributed
+	url = https://github.com/pGovm/Kimera-Distributed.git
