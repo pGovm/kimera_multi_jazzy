@@ -41,3 +41,6 @@
 [submodule "src/Kimera-Distributed"]
 	path = src/Kimera-Distributed
 	url = https://github.com/pGovm/Kimera-Distributed.git
+[submodule "src/Kimera-Multi-LCD"]
+	path = src/Kimera-Multi-LCD
+	url = https://github.com/pGovm/Kimera-Multi-LCD.git
