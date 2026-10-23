@@ -1,0 +1,43 @@
+[submodule "src/turtlebot3"]
+	path = src/turtlebot3
+	url = https://github.com/ROBOTIS-GIT/turtlebot3.git
+	branch = jazzy
+[submodule "src/turtlebot3_msgs"]
+	path = src/turtlebot3_msgs
+	url = https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+	branch = jazzy
+[submodule "src/turtlebot3_simulations"]
+	path = src/turtlebot3_simulations
+	url = https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+	branch = jazzy
+[submodule "src/Kimera-VIO"]
+	path = src/Kimera-VIO
+	url = https://github.com/MIT-SPARK/Kimera-VIO.git
+	branch = ros2/base
+[submodule "src/Kimera-PGMO"]
+	path = src/Kimera-PGMO
+	url = https://github.com/MIT-SPARK/Kimera-PGMO.git
+	branch = ros2
+[submodule "src/pose_graph_tools"]
+	path = src/pose_graph_tools
+	url = https://github.com/MIT-SPARK/pose_graph_tools.git
+	branch = ros2
+[submodule "src/Kimera-RPGO"]
+	path = src/Kimera-RPGO
+	url = https://github.com/MIT-SPARK/Kimera-RPGO.git
+[submodule "src/dpgo"]
+	path = src/dpgo
+	url = https://github.com/mit-acl/dpgo.git
+[submodule "src/gtsam"]
+	path = src/gtsam
+	url = https://github.com/borglab/gtsam.git
+[submodule "src/mesh_rviz_plugins"]
+	path = src/mesh_rviz_plugins
+	url = https://github.com/MIT-SPARK/mesh_rviz_plugins.git
+	branch = ros/base
+[submodule "src/Kimera_VIO_ROS"]
+	path = src/Kimera_VIO_ROS
+	url = https://github.com/pGovm/Kimera-VIO-ROS.git
+[submodule "src/Kimera-VIO-ROS"]
+	path = src/Kimera-VIO-ROS
+	url = https://github.com/pGovm/Kimera-VIO-ROS.git
