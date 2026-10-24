@@ -1,53 +1,53 @@
 [submodule "src/turtlebot3"]
-	path = src/turtlebot3
+	path = src/ROBOTIS_tb3/turtlebot3
 	url = https://github.com/ROBOTIS-GIT/turtlebot3.git
 	branch = jazzy
 [submodule "src/turtlebot3_msgs"]
-	path = src/turtlebot3_msgs
+	path = src/ROBOTIS_tb3/turtlebot3_msgs
 	url = https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 	branch = jazzy
 [submodule "src/turtlebot3_simulations"]
-	path = src/turtlebot3_simulations
+	path = src/ROBOTIS_tb3/turtlebot3_simulations
 	url = https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 	branch = jazzy
 [submodule "src/Kimera-VIO"]
-	path = src/Kimera-VIO
+	path = src/kimera/Kimera-VIO
 	url = https://github.com/MIT-SPARK/Kimera-VIO.git
 	branch = ros2/base
 [submodule "src/Kimera-PGMO"]
-	path = src/Kimera-PGMO
+	path = src/kimera/Kimera-PGMO
 	url = https://github.com/MIT-SPARK/Kimera-PGMO.git
 	branch = ros2
 [submodule "src/pose_graph_tools"]
-	path = src/pose_graph_tools
+	path = src/kimera/pose_graph_tools
 	url = https://github.com/MIT-SPARK/pose_graph_tools.git
 	branch = ros2
 [submodule "src/Kimera-RPGO"]
-	path = src/Kimera-RPGO
+	path = src/kimera/Kimera-RPGO
 	url = https://github.com/MIT-SPARK/Kimera-RPGO.git
 [submodule "src/dpgo"]
-	path = src/dpgo
+	path = src/kimera/dpgo
 	url = https://github.com/mit-acl/dpgo.git
 [submodule "src/gtsam"]
-	path = src/gtsam
+	path = src/kimera/gtsam
 	url = https://github.com/borglab/gtsam.git
 [submodule "src/mesh_rviz_plugins"]
-	path = src/mesh_rviz_plugins
+	path = src/kimera/mesh_rviz_plugins
 	url = https://github.com/MIT-SPARK/mesh_rviz_plugins.git
 	branch = ros2/base
 [submodule "src/Kimera-VIO-ROS"]
-	path = src/Kimera-VIO-ROS
+	path = src/kimera/Kimera-VIO-ROS
 	url = https://github.com/pGovm/Kimera-VIO-ROS.git
 	branch = ros2-jazzy-port
 [submodule "src/Kimera-Distributed"]
-	path = src/Kimera-Distributed
+	path = src/kimera/Kimera-Distributed
 	url = https://github.com/pGovm/Kimera-Distributed.git
 	branch = ros2-jazzy-port
 [submodule "src/Kimera-Multi-LCD"]
-	path = src/Kimera-Multi-LCD
+	path = src/kimera/Kimera-Multi-LCD
 	url = https://github.com/pGovm/Kimera-Multi-LCD.git
 	branch = ros2-jazzy-port
 [submodule "src/dpgo_ros"]
-	path = src/dpgo_ros
+	path = src/kimera/dpgo_ros
 	url = https://github.com/pGovm/dpgo_ros.git
 	branch = ros2-jazzy-port
