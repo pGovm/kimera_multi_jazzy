@@ -34,16 +34,20 @@
 [submodule "src/mesh_rviz_plugins"]
 	path = src/mesh_rviz_plugins
 	url = https://github.com/MIT-SPARK/mesh_rviz_plugins.git
-	branch = ros/base
+	branch = ros2/base
 [submodule "src/Kimera-VIO-ROS"]
 	path = src/Kimera-VIO-ROS
 	url = https://github.com/pGovm/Kimera-VIO-ROS.git
+	branch = ros2-jazzy-port
 [submodule "src/Kimera-Distributed"]
 	path = src/Kimera-Distributed
 	url = https://github.com/pGovm/Kimera-Distributed.git
+	branch = ros2-jazzy-port
 [submodule "src/Kimera-Multi-LCD"]
 	path = src/Kimera-Multi-LCD
 	url = https://github.com/pGovm/Kimera-Multi-LCD.git
+	branch = ros2-jazzy-port
 [submodule "src/dpgo_ros"]
 	path = src/dpgo_ros
 	url = https://github.com/pGovm/dpgo_ros.git
+	branch = ros2-jazzy-port
