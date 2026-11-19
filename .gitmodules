@@ -25,6 +25,7 @@
 [submodule "src/Kimera-RPGO"]
 	path = src/kimera/Kimera-RPGO
 	url = https://github.com/MIT-SPARK/Kimera-RPGO.git
+	branch = develop
 [submodule "src/dpgo"]
 	path = src/kimera/dpgo
 	url = https://github.com/mit-acl/dpgo.git
@@ -51,3 +52,11 @@
 	path = src/kimera/dpgo_ros
 	url = https://github.com/pGovm/dpgo_ros.git
 	branch = ros2-jazzy-port
+[submodule "src/kimera/config_utilities"]
+	path = src/kimera/config_utilities
+	url = https://github.com/MIT-SPARK/config_utilities.git
+	branch = main
+[submodule "src/kimera/Spatial-Hash"]
+	path = src/kimera/Spatial-Hash
+	url = https://github.com/MIT-SPARK/Spatial-Hash.git
+	branch = main
