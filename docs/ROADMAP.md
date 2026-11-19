@@ -41,8 +41,8 @@ These findings shape Phases 0–2. They were checked against the pinned submodul
 - [x] GTSAM pinned at 4.2a9
 - [x] Docker, `.dockerignore` and RViz config committed (`simulation_testing`)
 - [x] Reference dependency lists: `kimera_multi.repos`, `Kimera-PGMO/install/packages.yaml`
-- [ ] Add submodules `src/kimera/config_utilities` (`main`) and `src/kimera/Spatial-Hash` (`main`)
-- [ ] Set `branch = develop` for Kimera-RPGO in `.gitmodules` and move the submodule to `develop`
+- [x] Add submodules `src/kimera/config_utilities` (`main`) and `src/kimera/Spatial-Hash` (`main`)
+- [x] Set `branch = develop` for Kimera-RPGO in `.gitmodules` and move the submodule to `develop`
 
 ## Phase 1: Core C++ libraries (no ROS), in a Docker `kimera` stage
 
