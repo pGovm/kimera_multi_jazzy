@@ -35,7 +35,7 @@ These findings shape Phases 0–2. They were checked against the pinned submodul
   (voxblox) in ROS 1. That is not a build dependency, but without a mesh source
   there is no dense mesh.
 
-## Phase 0: Housekeeping
+## Phase 0: Housekeeping (**COMPLETED**)
 
 - [x] Fork submodules on `ros2-jazzy-port`
 - [x] GTSAM pinned at 4.2a9
