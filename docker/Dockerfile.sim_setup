@@ -1,0 +1,41 @@
+FROM osrf/ros:jazzy-desktop AS base
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV COLCON_WS=/root/turtlebot3_ws
+ENV ROS_SOURCE=/opt/ros/${ROS_DISTRO}/setup.bash
+ENV TZ=America/New_York
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    apt-utils build-essential cmake ninja-build pkg-config autoconf libtool \
+    gfortran git unzip wget python3-pip python3-argcomplete python3-yaml \
+    python3-ply python3-jinja2 pybind11-dev libboost-all-dev libtbb-dev \
+    libjpeg-dev libpng-dev libtiff-dev libvtk9-dev libgtk-3-dev \
+    libatlas-base-dev libparmetis-dev opencl-headers ocl-icd-opencl-dev \
+    qtbase5-dev udev libudev-dev libgnutls28-dev openssl libglib2.0-dev \
+    libgstreamer-plugins-base1.0-dev net-tools iproute2 iputils-ping nano \
+    xterm mesa-utils && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p ${COLCON_WS}/src
+
+FROM base AS manifests
+COPY src /tmp/src
+RUN mkdir -p /tmp/manifests /tmp/src/custom_tb3 && cd /tmp/src && \
+    find ROBOTIS_tb3 custom_tb3 -name package.xml -exec cp --parents {} /tmp/manifests \;
+
+FROM base
+COPY --from=manifests /tmp/manifests /tmp/rosdep_src
+RUN apt-get update && rosdep update --rosdistro ${ROS_DISTRO} && \
+    rosdep install --from-paths /tmp/rosdep_src --ignore-src -y --rosdistro ${ROS_DISTRO} && \
+    rm -rf /var/lib/apt/lists/* /tmp/rosdep_src
+
+WORKDIR ${COLCON_WS}
+RUN echo "source ${ROS_SOURCE}" >> /root/.bashrc && \
+    echo "[ -f ${COLCON_WS}/install/setup.bash ] && source ${COLCON_WS}/install/setup.bash" >> /root/.bashrc && \
+    echo "export ROS_DOMAIN_ID=30" >> /root/.bashrc && \
+    echo "export TURTLEBOT3_MODEL=waffle_pi" >> /root/.bashrc
+
+CMD ["bash"]
