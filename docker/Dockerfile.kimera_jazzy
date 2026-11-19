@@ -74,9 +74,6 @@ RUN apt-get update \
     && rosdep install --from-paths /tmp/rosdep_src --ignore-src -y && \
     rm -rf /var/lib/apt/lists/* /tmp/rosdep_src
 
-RUN bash -c "source ${ROS_SOURCE} && \
-             colocn build --symlink-install --parallel-workers 2"
-
 RUN echo "export ROS_DOMAIN_ID=30 # TURTLEBOT3" >> ~/.bashrc && \
     echo "export LD_LIBRARY_PATH=/usr/local/lib/aarch64-linux-gnu:$LD_LIBRARY_PATH" >> ~/.bashrc  && \
     echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc && \
